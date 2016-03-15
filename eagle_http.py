@@ -59,7 +59,7 @@ class eagle_http():
         return self.headers
 
     def send(self, send_data, request_headers):
-        requests.packages.urllib3.disable_warnings()
+       # requests.packages.urllib3.disable_warnings()
         if self.local:
             self.final_url = "https://" + self.user_name + ":" + \
                 self.user_password + "@eagle-" + self.user_name + ".local" + self.rurl
@@ -73,7 +73,7 @@ class eagle_http():
                 headers=request_headers,
                 verify=False)
             if self.noisy:
-                print self.final_url
+                #print self.final_url
                 print send_data
                 print self.req.text
             if self.json:
